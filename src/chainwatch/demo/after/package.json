@@ -1,0 +1,13 @@
+{
+  "name": "northstar-store",
+  "version": "1.1.0",
+  "dependencies": {
+    "react": "^19.0.0",
+    "express": "^5.1.0",
+    "northstar-analytics-demo": "1.0.0",
+    "lodahs": "1.0.0"
+  },
+  "scripts": {
+    "prepare": "node -e \"console.log('fixture only')\""
+  }
+}

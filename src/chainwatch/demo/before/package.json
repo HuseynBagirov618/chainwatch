@@ -1,0 +1,8 @@
+{
+  "name": "northstar-store",
+  "version": "1.0.0",
+  "dependencies": {
+    "react": "^19.0.0",
+    "express": "^5.1.0"
+  }
+}

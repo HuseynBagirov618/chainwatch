@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chainwatch"
+version = "1.0.0"
+description = "Explainable software supply-chain risk analysis"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["packaging>=24,<27", "httpx>=0.27,<1", "fastapi>=0.115,<1", "uvicorn>=0.30,<1", "cvss>=3.4,<4"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+chainwatch = "chainwatch.cli:main"
+
+[tool.setuptools.package-data]
+chainwatch = ["web/*", "demo/before/*", "demo/after/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

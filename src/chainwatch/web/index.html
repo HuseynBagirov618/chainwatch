@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>ChainWatch</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script type="module" src="/assets/app.js"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="brand-icon" aria-hidden="true">◈</span><span>ChainWatch<small>Supply chain security</small></span></div>
+    <nav aria-label="Workspace">
+      <button type="button" class="nav-button active" data-view="overview" aria-current="page"><span aria-hidden="true">▦</span>Overview</button>
+      <button type="button" class="nav-button" data-view="inventory"><span aria-hidden="true">▤</span>Dependencies</button>
+      <button type="button" class="nav-button" data-view="graph"><span aria-hidden="true">◇</span>Dependency graph</button>
+      <button type="button" class="nav-button" data-view="findings"><span aria-hidden="true">⚑</span>Findings</button>
+      <button type="button" class="nav-button" data-view="changes"><span aria-hidden="true">⇄</span>Changes</button>
+      <button type="button" class="nav-button" data-view="history"><span aria-hidden="true">◷</span>Scan history</button>
+    </nav>
+    <div class="sidebar-footer"><span></span>Local workspace</div>
+  </aside>
+  <main>
+    <header class="topbar">
+      <div class="breadcrumb">Workspace <span aria-hidden="true">/</span> <strong id="project-name">ChainWatch</strong></div>
+      <button class="primary" id="open-scan" type="button">New scan</button>
+    </header>
+    <div id="status" class="status" role="status" hidden></div>
+    <div id="page" class="page" tabindex="-1"><p>Loading the workspace…</p></div>
+  </main>
+  <dialog id="scan-dialog">
+    <form id="scan-form">
+      <div class="dialog-heading"><h2>Scan a project</h2><button class="icon-button" type="button" id="close-scan" aria-label="Close">×</button></div>
+      <label for="scan-folder">Project folder</label>
+      <input id="scan-folder" type="file" webkitdirectory multiple required>
+      <p class="muted">ChainWatch reads supported dependency manifests from the selected folder.</p>
+      <label class="checkbox"><input id="scan-online" type="checkbox"> Look up package information online</label>
+      <p class="muted">Online scans send package names and versions to public security data providers.</p>
+      <button class="primary" type="submit">Run scan</button>
+    </form>
+  </dialog>
+  <dialog id="package-dialog"><div id="package-details"></div></dialog>
+</body>
+</html>
