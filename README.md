@@ -6,6 +6,19 @@ ChainWatch maps a project's npm and Python dependencies and explains software su
 
 Requires Python 3.11 or later. Create a virtual environment and install ChainWatch from this repository.
 
+### Windows PowerShell
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install .
+.\.venv\Scripts\python.exe -m chainwatch.cli demo
+.\.venv\Scripts\python.exe -m chainwatch.cli serve
+```
+
+These commands work without activating the virtual environment or editing `PATH`. For the CLI examples below, replace `chainwatch` with `.\.venv\Scripts\python.exe -m chainwatch.cli`.
+
+### macOS and Linux
+
 ```sh
 python -m venv .venv
 . .venv/bin/activate
@@ -13,6 +26,8 @@ python -m pip install .
 chainwatch demo
 chainwatch serve
 ```
+
+### Open the dashboard
 
 Open <http://127.0.0.1:8421>. The dashboard starts with the offline Northstar Store example. Select **New scan** to scan your own folder. The **Changes** view compares pairs of folders. The dashboard includes a searchable inventory, package details, an interactive graph, findings, TXT and JSON export, and local scan history.
 
